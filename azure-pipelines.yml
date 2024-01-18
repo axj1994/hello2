@@ -1,0 +1,14 @@
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+
+- script: |
+    curl -X POST -H 'Content-type: application/json' \
+    --data '{"issues":["TEST-1"]}' \
+    https://automation.atlassian.com/pro/hooks/0d07777f072f49f598e79958a1da620594d1fb59
+  displayName: 'jira automation rule'
